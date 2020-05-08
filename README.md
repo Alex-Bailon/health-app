@@ -53,5 +53,3 @@ There are no tests for this app.
 Copyright ©2020 Alex Bailon, Tressa Park, and Herson Rodriguez
 
 ## Contact
-![Image of TressaPark](https://avatars3.githubusercontent.com/u/60233280?v=4)  
-   Please feel free to [email me](mailto:tressapark@gmail.com) if you have additional questions. Thank you.
