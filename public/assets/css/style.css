@@ -1,0 +1,16 @@
+#welcome {
+    width: 100%;
+    margin: 0 auto;
+}
+#logo {
+    height: 50%;
+    width: 50%;
+}
+#login {
+    width: 50%;
+    display: none;
+}
+#logoLogin{
+    height: 30%;
+    width: 30%;
+}
