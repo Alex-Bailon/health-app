@@ -35,11 +35,12 @@ $("#login").on("submit", function(event) {
 // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
 function loginUser(email, password) {
   $.post("/api/login", {
-    email: email,
-    password: password
+    email,
+    password
   })
-    .then(function() {
-      console.log('loged in')
+    .then(function(data) {
+      console.log('logged in')
+      window.location.replace("/userhome")
       // If there's an error, log the error
     })
 }

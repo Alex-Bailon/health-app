@@ -1,7 +1,9 @@
 const express = require('express')
 let router = express.Router();
 let db = require("../models");
-let passport = require("../config/passport");
+let passport = require("../config/passport")
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+;
 
 router.get("/", function (req, res) {
     // If the user already has an account send them to the members page
@@ -11,9 +13,12 @@ router.get("/", function (req, res) {
     res.render("index")
 });
 
-router.post("/api/login", passport.authenticate("local"), function (req, res) {
-    res.json(req.user);
+router.get("/userhome", isAuthenticated, function (req, res) {
+    res.render("userHome")
 });
+
+router.post("/api/login", passport.authenticate('local', { successRedirect: '/userhome', failureRedirect: '/' }));
+
 
 router.post("/api/signup", function (req, res) {
     db.User.create({
