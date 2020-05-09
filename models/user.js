@@ -17,6 +17,9 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+      validate: {
+        len: [6,20],
+      }
     },
     // password cannot be null
     password: {

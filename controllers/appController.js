@@ -4,7 +4,11 @@ let db = require("../models");
 let passport = require("../config/passport");
 
 router.get("/", function (req, res) {
-    res.render("index");
+    // If the user already has an account send them to the members page
+    if (req.user) {
+        res.render("userHome")
+    }
+    res.render("index")
 });
 
 router.post("/api/login", passport.authenticate("local"), function (req, res) {
