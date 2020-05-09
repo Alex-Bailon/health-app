@@ -10,11 +10,11 @@ $(document).ready(function () {
     $('.modal').modal();
 
 // Getting references to our form and inputs
-var emailInput = $("input#email-input");
-var passwordInput = $("input#password-input");
+var emailInput = $("#email");
+var passwordInput = $("#password");
 
 // When the form is submitted, we validate there's an email and password entered
-$("#loginBtn").on("click", function(event) {
+$("#login").on("submit", function(event) {
   event.preventDefault();
   var userData = {
     email: emailInput.val().trim(),
@@ -26,6 +26,7 @@ $("#loginBtn").on("click", function(event) {
   }
 
   // If we have an email and password we run the loginUser function and clear the form
+  console.log('loginuser Function')
   loginUser(userData.email, userData.password);
   emailInput.val("");
   passwordInput.val("");
@@ -38,11 +39,8 @@ function loginUser(email, password) {
     password: password
   })
     .then(function() {
-      window.location.reload();
+      console.log('loged in')
       // If there's an error, log the error
     })
-    .catch(function(err) {
-      console.log(err);
-    });
 }
 });

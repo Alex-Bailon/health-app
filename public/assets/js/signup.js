@@ -5,7 +5,7 @@ $(document).ready(function() {
     var passwordInput = $("#eSignup");
   
     // When the signup button is clicked, we validate the email and password are not blank
-    $("#signupBtn").on("click", function(event) {
+    $("#signUp").on("submit", function(event) {
       event.preventDefault();
       console.log('clicked')
       var userData = {
@@ -18,8 +18,9 @@ $(document).ready(function() {
         return;
       }
       // If we have an email and password, run the signUpUser function
-      signUpUser(userData.email, userData.password);
+      signUpUser(userData.email, userData.password, userData.username);
       emailInput.val("");
+      usernameInput.val("")
       passwordInput.val("");
     });
   
@@ -31,16 +32,12 @@ $(document).ready(function() {
         email: email,
         password: password
       })
-        .then(function(data) {
-          window.location.reload();
+        .then( () => {
+          console.log('done')
           // If there's an error, handle it by throwing up a bootstrap alert
         })
-        .catch(handleLoginErr);
+        .catch(err => {
+          console.log(err)
+        })
     }
-  
-    function handleLoginErr(err) {
-      $("#alert .msg").text(err.responseJSON);
-      $("#alert").fadeIn(500);
-    }
-  });
-  
+  })
