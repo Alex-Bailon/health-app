@@ -17,8 +17,9 @@ router.get("/userhome", isAuthenticated, function (req, res) {
     res.render("userHome")
 });
 
-router.post("/api/login", passport.authenticate('local', { successRedirect: '/userhome', failureRedirect: '/' }));
-
+router.post("/api/login", passport.authenticate("local"), function(req, res) {
+    return res.json(req.user);
+  });
 
 router.post("/api/signup", function (req, res) {
     db.User.create({
