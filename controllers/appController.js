@@ -2,6 +2,7 @@ const express = require('express')
 let router = express.Router();
 let db = require("../models");
 let passport = require("../config/passport")
+const bcrypt = require('bcryptjs');
 const { checkAuth, forwardAuth } = require("../config/middleware/isAuthenticated");
 ;
 
@@ -22,17 +23,24 @@ router.post("/api/login", function(req, res, next) {
   });
 
 router.post("/api/signup", function (req, res) {
-    const { username, email, password } = req.body
-    db.User.create({
-        email,
-        username,
-        password
-    }).then(function () {
-        res.redirect("/");
-    }).catch(function (err) {
-        res.status(401).json(err);
-    });
-});
+    let { username, email, password } = req.body
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(password, salt, (err, hash) => {
+          if (err) throw err
+          password = hash
+          db.User.create({
+              email,
+              username,
+              password
+          }).then(function () {
+              res.redirect("/");
+          }).catch(function (err) {
+              console.log(err)
+          })
+      })
+    })
+})
+          
 
 router.get("/logout", function (req, res) {
     req.logout();
