@@ -2,32 +2,33 @@ const express = require('express')
 let router = express.Router();
 let db = require("../models");
 let passport = require("../config/passport")
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+const { checkAuth, forwardAuth } = require("../config/middleware/isAuthenticated");
 ;
 
-router.get("/", function (req, res) {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-        res.render("userHome")
-    }
+router.get("/", forwardAuth, function (req, res) {
     res.render("index")
 });
 
-router.get("/userhome", isAuthenticated, function (req, res) {
+router.get("/userhome", checkAuth, function (req, res) {
     res.render("userHome")
 });
 
-router.post("/api/login", passport.authenticate("local"), function(req, res) {
-    return res.json(req.user);
+router.post("/api/login", function(req, res, next) {
+    passport.authenticate("local", {
+        successRedirect: '/userhome',
+        failureRedirect: '/'
+    })(req, res, next)
+    // return res.json(req.user);
   });
 
 router.post("/api/signup", function (req, res) {
+    const { username, email, password } = req.body
     db.User.create({
-        email: req.body.email,
-        username: req.body.username,
-        password: req.body.password
+        email,
+        username,
+        password
     }).then(function () {
-        res.redirect(307, "/api/login");
+        res.redirect("/");
     }).catch(function (err) {
         res.status(401).json(err);
     });

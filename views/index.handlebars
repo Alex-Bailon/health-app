@@ -1,9 +1,9 @@
 <div class="row" id="welcome">
     <img src="../assets/images/HomeBodyLogo.png" id="logo" alt="Home Body Logo">
-    <form id="login">
+    <form action="/api/login" method="POST" id="login">
         <img src="../assets/images/HomeBodyLogo.png" id="logoLogin" alt="Home Body Logo">
-        <input type="text" placeholder="Email" id="email">
-        <input type="password" placeholder="Password" id="password">
+        <input type="text" name="email" placeholder="Email" id="email">
+        <input type="password" name="password" placeholder="Password" id="password">
         <button type="submit" class="waves-effect waves-light btn">Login</button>
  <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Sign-Up</a>
@@ -13,11 +13,11 @@
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <form id="signUp">
+      <form action="/api/signup" method="POST" id="signUp">
         <img src="../assets/images/HomeBodyLogo.png" id="logoLogin" alt="Home Body Logo">
-        <input type="text" placeholder="User Name" id="username">
-        <input type="text" placeholder="Email" id="eSignup">
-        <input type="password" placeholder="Password" id="pSignup">
+        <input type="text" name="username" placeholder="User Name" id="username">
+        <input type="text" name="email" placeholder="Email" id="eSignup">
+        <input type="password" name="password" placeholder="Password" id="pSignup">
         <button type="submit" class="waves-effect waves-light btn">SignUp</button>
     </form>
     </div>
