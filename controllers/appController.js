@@ -11,7 +11,9 @@ router.get("/", forwardAuth, function (req, res) {
 });
 
 router.get("/userhome", checkAuth, function (req, res) {
-    res.render("userHome")
+    res.render("userHome", {
+        user: req.user
+    })
 });
 
 router.post("/api/login", function(req, res, next) {
