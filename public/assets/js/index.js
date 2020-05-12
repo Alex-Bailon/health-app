@@ -9,6 +9,9 @@ $(document).ready(function () {
   hideLogo()
 
   $('.modal').modal()
+  $('.slider').slider();
+
+  
 
   // // Getting references to our form and inputs
   // var emailInput = $("#email");
