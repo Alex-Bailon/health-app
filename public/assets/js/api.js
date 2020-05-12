@@ -1,4 +1,4 @@
-
+/* eslint-disable no-undef */
 $(document).ready(function () {
 $("#foodform").on("submit", function(event){
 event.preventDefault()
