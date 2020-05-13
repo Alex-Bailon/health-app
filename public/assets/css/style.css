@@ -1,14 +1,23 @@
+html {
+  background: url(/assets/images/raspberry-102-4320x3240.png) no-repeat center fixed;
+  background-size: cover;
+  height: auto;
+}
 #welcome {
   width: 100%;
   margin: 0 auto;
+  text-align: center;
+  
 }
 #logo {
-  height: 50%;
-  width: 50%;
+  height: 100%;
+  width: 100%;
+  
 }
 #login {
-  width: 50%;
+  width: 100%;
   display: none;
+  
 }
 #logoLogin {
   height: 30%;
@@ -32,3 +41,4 @@
   margin-right: auto;
   margin-bottom: 10px;
 }
+

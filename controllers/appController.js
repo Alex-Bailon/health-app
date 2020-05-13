@@ -3,6 +3,7 @@ const router = express.Router()
 const db = require('../models')
 const passport = require('../config/passport')
 const bcrypt = require('bcryptjs')
+const axios = require("axios");
 const {
   checkAuth,
   forwardAuth
@@ -47,9 +48,30 @@ router.post('/api/signup', function (req, res) {
   })
 })
 
+router.post("/api/food", function(req,res){
+  axios({
+    "method":"GET",
+    "url":"https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data",
+    "headers":{
+    "content-type":"application/octet-stream",
+    "x-rapidapi-host":"edamam-edamam-nutrition-analysis.p.rapidapi.com",
+    "x-rapidapi-key":"7414a69555mshdafeae439feb5b5p14f0dejsn72987a0fcc7a",
+    "useQueryString":true
+    },"params":{
+    "ingr":req.body.item
+    }
+    })
+    .then((response)=>{
+      console.log((response.data.calories))
+    })
+    .catch((error)=>{
+      console.log(error)
+    });
+  })
+
 router.get('/logout', function (req, res) {
   req.logout()
   res.redirect('/')
-})
+});
 
 module.exports = router
