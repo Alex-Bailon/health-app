@@ -18,13 +18,12 @@ router.get('/userhome', checkAuth, function (req, res) {
   })
 })
 
-router.post('/api/login', function (req, res, next) {
-  passport.authenticate('local', {
-    successRedirect: '/userhome',
-    failureRedirect: '/'
-  })(req, res, next)
-  // return res.json(req.user);
+router.post('/api/login', passport.authenticate('local'), function(req, res) {
+  res.json(req.user)
 })
+
+  // return res.json(req.user);
+
 
 router.post('/api/signup', function (req, res) {
   let { username, email, password } = req.body
@@ -49,6 +48,15 @@ router.post('/api/signup', function (req, res) {
 })
 
 router.post("/api/food", function(req,res){
+  // get data from edamam
+  // get user id from req.headers
+  // add data from edamam to food item table
+  // join table user_food 
+  // get all food for user
+  // send it back
+  // possibly add controllers for different files i.e. user_food
+  console.log("This works")
+  console.log(req.headers["x-user-id"])
   axios({
     "method":"GET",
     "url":"https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data",
@@ -62,7 +70,8 @@ router.post("/api/food", function(req,res){
     }
     })
     .then((response)=>{
-      console.log((response.data.calories))
+     
+      res.json(response.data)
     })
     .catch((error)=>{
       console.log(error)
