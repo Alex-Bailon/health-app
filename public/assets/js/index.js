@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 $(document).ready(function () {
   function hideLogo () {
-    $('#logo').fadeOut(2000)
+    $('#logo').fadeOut(1500)
     setTimeout(() => {
-      $('#login').css('display', 'block')
+      $('#login').fadeIn(1000).css('display', 'block')
     }, 2000)
   }
   hideLogo()
