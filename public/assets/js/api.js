@@ -1,68 +1,48 @@
-$.ajaxSetup({ headers: { 'x-user-id': localStorage.getItem("userId") } });
+$.ajaxSetup({ headers: { 'x-user-id': localStorage.getItem('userId') } })
 $(document).ready(function () {
-  $("#foodform").on("submit", function (event) {
+  $('#foodform').on('submit', function (event) {
     event.preventDefault()
     var foodSearch = {
-      item: $("#foodSearch").val().trim()
+      item: $('#foodSearch')
+        .val()
+        .trim()
     }
-    $.ajax("/api/food", {
-      type: "POST",
+    $.ajax('/api/food', {
+      type: 'POST',
       data: foodSearch
-    }).then(
-      function (data) {
-        // Reload the page to get the updated list
-        $("#calChart").text(data.calories)
-        // console.log(data)
+    }).then(function (data) {
+      // Reload the page to get the updated list
+      $('#calChart').text(data.calories)
+      // console.log(data)
 
-        var ctx = $("#calChart");
-        var myCalChart = new Chart(ctx, {
-          type: "doughnut",
+      function makeChart(data, max, color) {
+        return {
+          type: 'doughnut',
           data: {
-            datasets: [{
-              data: [data.calories, (2000 - data.calories)], 
-              backgroundColor: "red"
-            }]
+            datasets: [
+              {
+                data: [data, max - data],
+                backgroundColor: color
+              }
+            ]
           },
           options: {}
-        });
+        }
+      }
 
-        var ctx = $("#fatChart");
-        var myFatChart = new Chart(ctx, {
-          type: "doughnut",
-          data: {
-            datasets: [{
-              data: [data.totalNutrients.FAT.quantity.toFixed(2), (77 - data.totalNutrients.FAT.quantity.toFixed(2))], 
-              backgroundColor: "green"
-            }]
-          },
-          options: {}
-        });
-        
-        var ctx = $("#sugarChart");
-        var mySugarChart = new Chart(ctx, {
-          type: "doughnut",
-          data: {
-            datasets: [{
-              data: [data.totalNutrients.SUGAR.quantity.toFixed(2), (37 - data.totalNutrients.SUGAR.quantity.toFixed(2))], 
-              backgroundColor: "orange"
-            }]
-          },
-          options: {}
-        });
+      const ctx = $('#calChart')
+      const myCalChart = new Chart(ctx, makeChart(data.calories, 2000, 'red'))
 
-        var ctx = $("#carbChart");
-        var myCarbChart = new Chart(ctx, {
-          type: "doughnut",
-          data: {
-            datasets: [{
-              data: [data.totalNutrients.CHOCDF.quantity.toFixed(2), (275 - data.totalNutrients.CHOCDF.quantity.toFixed(2))], 
-              backgroundColor: "blue"
-            }]
-          },
-          options: {}
-        });
-         }
-    );
 
-  });
-});
+      const ctx2 = $('#fatChart')
+      const myFatChart = new Chart(ctx2, makeChart(data.totalNutrients.FAT.quantity.toFixed(2), 77, 'green'))
+
+
+      const ctx3 = $('#sugarChart')
+      const mySugarChart = new Chart(ctx3, makeChart(data.totalNutrients.SUGAR.quantity.toFixed(2), 37, 'ornage'))
+
+      const ctx4 = $('#carbChart')
+      const myCarbChart = new Chart(ctx4, makeChart(data.totalNutrients.CHOCDF.quantity.toFixed(2), 275, 'blue'))
+    })
+  })
+})
