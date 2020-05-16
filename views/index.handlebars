@@ -1,51 +1,40 @@
 <div id="welcome">
   <div class="row">
     <div class="col s12">
-    <img src="../assets/images/home-body.png" id="logo" alt="Home Body Logo">
-    {{!-- <form method="POST" id="login">
-        <img src="../assets/images/home-body.png" id="logoLogin" alt="Home Body Logo">
-        <input type="text" name="email" placeholder="Email" id="email">
-        <input type="password" name="password" placeholder="Password" id="password">
-        <button id="loginbtn" type="submit" class="waves-effect waves-light btn">Login</button> --}}
- <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger"class="z-depth-5" href="#modal2">Login</a>
-  <a class="waves-effect waves-light btn modal-trigger"class="z-depth-5"id="modalbtn" href="#modal1">Sign-Up</a>
-    {{!-- </form> --}}
+      <img src="../assets/images/home-body.png" id="logo" alt="Home Body Logo">
+      <!-- Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger" class="z-depth-5" href="#modal2">Login</a>
+      <a class="waves-effect waves-light btn modal-trigger" class="z-depth-5" id="modalbtn" href="#modal1">Sign-Up</a>
     </div>
-    </div>
+  </div>
 </div>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <form action="/api/signup" method="POST" id="signUp">
-        <img src="../assets/images/home-body.png" id="logoLogin" alt="Home Body Logo">
-        <input type="text" name="username" placeholder="User Name" id="username">
-        <input  type="text" name="email" placeholder="Email" id="eSignup">
-        
-        <input type="password" name="password" placeholder="Password" id="pSignup">
-        <button id="signupbtn" type="submit" class="waves-effect waves-light btn">SignUp</button>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <form action="/api/signup" method="POST" id="signUp">
+      <img src="../assets/images/home-body.png" id="logoLogin" alt="Home Body Logo">
+      <input type="text" name="username" placeholder="User Name" id="username">
+      <input type="text" name="email" placeholder="Email" id="eSignup">
+      <input type="password" name="password" placeholder="Password" id="pSignup">
+      <button id="signupbtn" type="submit" class="waves-effect waves-light btn">SignUp</button>
     </form>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
   </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</div>
 
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <form action="/api/login" method="POST" id="login">
-        <img src="../assets/images/home-body.png" id="logoLogin" alt="Home Body Logo">
-        <input type="text" name="email" placeholder="Email" id="email">
-        <input type="password" name="password" placeholder="Password" id="password">
-        <button id="loginbtn" type="submit" class="waves-effect waves-light btn">Login</button>
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <form action="/api/login" method="POST" id="login">
+      <img src="../assets/images/home-body.png" id="logoLogin" alt="Home Body Logo">
+      <input type="text" name="email" placeholder="Email" id="email">
+      <input type="password" name="password" placeholder="Password" id="password">
+      <button id="loginbtn" type="submit" class="waves-effect waves-light btn">Login</button>
     </form>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
   </div>
-  {{!-- <div class="d-inline p-2" class="align-middle">
-      <img id="img" src="/assets/images/raspberry-102-4320x3240.png" class="img-fluid" alt="Responsive image">
-
-    </div> --}}
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</div>

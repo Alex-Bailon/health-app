@@ -10,12 +10,20 @@ $(document).ready(() => {
           {
             data: [data, Math.max(max - data, 0)],
             backgroundColor: [color, 'lightgray'],
-            fillOpacity: .3
+            fillOpacity: 0.3
           }
         ],
         labels: ['Total', 'Recommended']
       },
-      options: {}
+      options: {
+        legend: {
+          labels: {
+            fontColor: 'white',
+            fontStyle: 'bold',
+            fontSize: 18
+          }
+        }
+      }
     }
   }
   let calTotal
@@ -54,16 +62,16 @@ $(document).ready(() => {
     $('#carbHeader').text('Carbs in Grams')
 
     const ctx = $('#calChart')
-    const myCalChart = new Chart(ctx, makeChart(calTotal, 2000, 'red'))
+    const myCalChart = new Chart(ctx, makeChart(calTotal, 2000, '#D38B5D'))
 
     const ctx2 = $('#fatChart')
-    const myFatChart = new Chart(ctx2, makeChart(fatTotal, 55, 'lightgreen'))
+    const myFatChart = new Chart(ctx2, makeChart(fatTotal, 55, '#739e82'))
 
     const ctx3 = $('#sugarChart')
-    const mySugarChart = new Chart(ctx3, makeChart(sugarTotal, 32, 'violet'))
+    const mySugarChart = new Chart(ctx3, makeChart(sugarTotal, 32, '#2c5530'))
 
     const ctx4 = $('#carbChart')
-    const myCarbChart = new Chart(ctx4, makeChart(carbTotal, 275, 'lightblue'))
+    const myCarbChart = new Chart(ctx4, makeChart(carbTotal, 275, '#99621e'))
   }
   if (window.location.pathname === '/userhome') {
     totalCharts()
