@@ -14,7 +14,7 @@ html {
   margin-top: 20px;
 }
 #logoutbtn{
-  float: right;
+  margin-left: 20px;
   width: auto;
   margin-top: 20px;
 }
@@ -23,7 +23,7 @@ canvas{
 }
 #addBtn {
   background-color: #75172f;
-  width: 20%;
+  width: auto;
   
 }
 #modalbtn{
@@ -51,6 +51,7 @@ canvas{
   border-bottom: 2px solid rgba(128, 128, 128, 0.651);
   padding-left: 5px;
   width: 50%;
+  color: white;
 }
 #foodform{
   text-align: center;
