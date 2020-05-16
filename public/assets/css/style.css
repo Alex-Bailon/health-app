@@ -28,10 +28,15 @@ html {
   text-align: center;
   
 }
-#email, #password, #foodSearch, #username, #pSignup, #eSignup {
+#email, #password, #username, #pSignup, #eSignup {
   border-bottom: 2px solid rgba(128, 128, 128, 0.651);
   padding-left: 5px;
   width: 100%;
+}
+#foodSearch{
+  border-bottom: 2px solid rgba(128, 128, 128, 0.651);
+  padding-left: 5px;
+  width: 50%;
 }
 ::placeholder{
   color: white;
