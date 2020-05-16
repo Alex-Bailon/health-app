@@ -1,14 +1,20 @@
 /* eslint-disable no-undef */
 $(document).ready(function () {
   function hideLogo () {
-    $('#logo').fadeOut(1500)
-    setTimeout(() => {
-      $('#login').fadeIn(1000).css('display', 'block')
-    }, 2000)
+    $('html').fadeIn(2000);
+    $('#logo').fadeIn(1500)
+    $('.modal-trigger').fadeIn(2000).css('display', 'block')
+    
   }
   hideLogo()
 
-  $('.modal').modal()
+
+  $('.modal').modal({
+    opacity: 0.6,
+    inDuration: 500,
+    
+});
+  
   $('.slider').slider()
   $("#login").submit(function(e) {
     e.preventDefault()

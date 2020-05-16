@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       unique: true,
       validate: {
-        len: [6, 20]
+        len: [4, 20]
       }
     },
     // password cannot be null
