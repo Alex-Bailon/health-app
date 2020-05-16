@@ -1,4 +1,4 @@
-<a href="/logout" class="btn btn-secondary">Logout</a>
+<a href="/logout" class="btn btn-secondary" id="logoutbtn">Logout</a>
 {{!-- <div class="container"> --}}
   <div class="row">
     <h3>Hello {{ user.username }}, welcome to Home Body</h3>
@@ -13,16 +13,16 @@
   <div class="row">
     <div class="col s12.m10">
       <h4>Sreached Item:</h4>
-      <h5>Calories: <span class="itemCal"></span></h5>
-      <h5>Fat(g): <span class="itemFat"></span></h5>
-      <h5>Sugar(g): <span class="itemSugar"></span></h5>
-      <h5>Carbs(g): <span class="itemCarbs"></span></h5>
+      <h6>Calories: <span class="itemCal"></span></h6>
+      <h6>Fat(g): <span class="itemFat"></span></h6>
+      <h6>Sugar(g): <span class="itemSugar"></span></h6>
+      <h6>Carbs(g): <span class="itemCarbs"></span></h6>
     </div>
     <div class="col s12 m2">
-      <a id="addBtn" class="btn btn-secondary">Add</a>
     </div>
   </div>
   <div class="row">
+      <a id="addBtn" class="btn btn-secondary">Add to Chart</a>
     <h4>Today's Totals</h4>
     <div class="col s12 m6">
       <h5>Calories Total</h5>

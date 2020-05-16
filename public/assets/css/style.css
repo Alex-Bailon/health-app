@@ -4,6 +4,7 @@ html {
   margin-top: auto;
   display: none;
   font-family: 'Roboto Condensed', sans-serif;
+  
    
 }
 
@@ -11,6 +12,19 @@ html {
   background-color: #75172f;
   width: 20%;
   margin-top: 20px;
+}
+#logoutbtn{
+  float: right;
+  width: auto;
+  margin-top: 20px;
+}
+canvas{
+  opacity: 0.7;
+}
+#addBtn {
+  background-color: #75172f;
+  width: 20%;
+  
 }
 #modalbtn{
   text-align: center;
@@ -37,6 +51,10 @@ html {
   border-bottom: 2px solid rgba(128, 128, 128, 0.651);
   padding-left: 5px;
   width: 50%;
+}
+#foodform{
+  text-align: center;
+  padding: 20px;
 }
 ::placeholder{
   color: white;
@@ -77,11 +95,12 @@ background-color: #283a298c;
 text-align: center;
 } 
 
-h3, p{
+h3, p, h5{
   color: white;
   text-align: center;
   font-weight: bold;
-  
-  
 }
-
+h4, h6{
+  text-align: left;
+  color: white;
+}

@@ -7,7 +7,8 @@ $(document).ready(() => {
         datasets: [
           {
             data: [data, Math.max(max - data, 0)],
-            backgroundColor: [color, 'lightgray']
+            backgroundColor: [color, 'lightgray'],
+            fillOpacity: .3
           }
         ],
         labels: ['Total', 'Recommended']
@@ -54,13 +55,13 @@ $(document).ready(() => {
     const myCalChart = new Chart(ctx, makeChart(calTotal, 2000, 'red'))
 
     const ctx2 = $('#fatChart')
-    const myFatChart = new Chart(ctx2, makeChart(fatTotal, 55, 'green'))
+    const myFatChart = new Chart(ctx2, makeChart(fatTotal, 55, 'lightgreen'))
 
     const ctx3 = $('#sugarChart')
-    const mySugarChart = new Chart(ctx3, makeChart(sugarTotal, 32, 'orange'))
+    const mySugarChart = new Chart(ctx3, makeChart(sugarTotal, 32, 'violet'))
 
     const ctx4 = $('#carbChart')
-    const myCarbChart = new Chart(ctx4, makeChart(carbTotal, 275, 'blue'))
+    const myCarbChart = new Chart(ctx4, makeChart(carbTotal, 275, 'lightblue'))
   }
   if (window.location.pathname === '/userhome') {
     totalCharts()
