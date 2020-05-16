@@ -1,19 +1,23 @@
 html {
-  background: url(/assets/images/raspberry-102-4320x3240.png) no-repeat center fixed;
+  background: url(https://picsum.photos/id/999/4000/2667?&blur=8) no-repeat center fixed;
   background-size: cover;
   margin-top: auto;
-  
+  display: none;
+  font-family: 'Roboto Condensed', sans-serif;
+   
 }
-#welcome {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  
-  
-}
+
 #loginbtn, .btn{
   background-color: #75172f;
+  width: 20%;
+  margin-top: 20px;
 }
+#modalbtn{
+  text-align: center;
+  margin-top: 5px;
+  display: none;
+}
+
 #loginbtn:hover, .btn:hover{
   background-color: #723b48;
 }
@@ -21,17 +25,28 @@ html {
   height: 100%;
   width: 100%;
   margin-top: 20%;
+  text-align: center;
   
 }
-#login {
+#email, #password, #foodSearch, #username, #pSignup, #eSignup {
+  border-bottom: 2px solid rgba(128, 128, 128, 0.651);
+  padding-left: 5px;
   width: 100%;
+}
+::placeholder{
+  color: white;
+}
+.modal-trigger {
+  width: 150px;
   display: none;
+  text-align: center;
+  margin: auto;
   
 }
 #logoLogin {
   height: 50%;
   width: 50%;
-  margin-top: 10%;
+  margin: 5% 0;
 }
 #footer {
   display: block;
@@ -50,5 +65,18 @@ html {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
+}
+
+.modal{
+background-color: #283a298c;
+text-align: center;
+} 
+
+h3, p{
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  
+  
 }
 

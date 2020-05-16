@@ -1,14 +1,23 @@
 /* eslint-disable no-undef */
 $(document).ready(function () {
   function hideLogo () {
-    $('#logo').fadeOut(1500)
+    $('html').fadeIn(2000);
+    // $('#logo').fadeOut(500)
+    $('#logo').fadeIn(1500)
     setTimeout(() => {
-      $('#login').fadeIn(1000).css('display', 'block')
-    }, 2000)
+      // $('.modal-trigger').css('display', 'block')
+      $('.modal-trigger').fadeIn(2000).css('display', 'block')
+    }, 500)
   }
   hideLogo()
 
-  $('.modal').modal()
+
+  $('.modal').modal({
+    opacity: 0.6,
+    inDuration: 300,
+    
+});
+  
   $('.slider').slider()
   $("#login").submit(function(e) {
     e.preventDefault()
