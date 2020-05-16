@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 $.ajaxSetup({ headers: { 'x-user-id': localStorage.getItem('userId') } })
 $(document).ready(() => {
   function makeChart (data, max, color) {
