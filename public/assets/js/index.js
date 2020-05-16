@@ -4,17 +4,13 @@ $(document).ready(function () {
     $('html').fadeIn(2000);
     $('#logo').fadeIn(1500)
     $('.modal-trigger').fadeIn(2000).css('display', 'block')
-    
+
   }
   hideLogo()
-
-
   $('.modal').modal({
     opacity: 0.6,
     inDuration: 500,
-    
-});
-  
+  });
   $('.slider').slider()
   $("#login").submit(function(e) {
     e.preventDefault()
