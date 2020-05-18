@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-$.ajaxSetup({ headers: { 'x-user-id': localStorage.getItem('userId') } })
 $(document).ready(() => {
+  // Main function for Chart js
   function makeChart (data, max, color) {
     return {
       type: 'doughnut',
@@ -30,13 +30,11 @@ $(document).ready(() => {
   let fatTotal
   let sugarTotal
   let carbTotal
+  // Gets the current date to store user info for 24 hours
   const today = new Date().getDate()
   let todayStored = new Date().getDate()
-  console.log(today)
-  console.log(todayStored)
   initDate()
   if (+today === +todayStored) {
-    console.log('if')
     calTotal = localStorage.getItem('calTotal')
     fatTotal = localStorage.getItem('fatTotal')
     sugarTotal = localStorage.getItem('sugarTotal')
@@ -55,12 +53,13 @@ $(document).ready(() => {
     localStorage.setItem('sugarTotal', sugarTotal)
     localStorage.setItem('carbTotal', carbTotal)
   }
+  // Renders information into doughnut charts
   function totalCharts () {
     $('#calHeader').text('Calories')
     $('#fatHeader').text('Fat in Grams')
     $('#sugarHeader').text('Sugar in Grams')
     $('#carbHeader').text('Carbs in Grams')
-
+  // Sets the total amount to display and chart color
     const ctx = $('#calChart')
     const myCalChart = new Chart(ctx, makeChart(calTotal, 2000, '#D38B5D'))
 
@@ -73,9 +72,11 @@ $(document).ready(() => {
     const ctx4 = $('#carbChart')
     const myCarbChart = new Chart(ctx4, makeChart(carbTotal, 275, '#99621e'))
   }
+  // Refreshes the page when new information is added to the charts
   if (window.location.pathname === '/userhome') {
     totalCharts()
   }
+  // API call to collect and store retreived data
   $('#foodform').on('submit', event => {
     event.preventDefault()
     var foodSearch = {
