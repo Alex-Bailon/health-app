@@ -1,73 +1,65 @@
 html {
-  background: url(https://picsum.photos/id/999/4000/2667?&blur=9) no-repeat
-    center fixed;
+  background: url(https://picsum.photos/id/999/4000/2667?&blur=9) no-repeat center fixed;
   background-size: cover;
   margin-top: auto;
   display: none;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;  
 }
-
-#loginbtn,
-.btn {
+#loginbtn, .btn{
   background-color: #75172f;
   width: auto;
   margin-top: 20px;
 }
-#logoutbtn {
+#logoutbtn{
   margin-left: 20px;
   width: auto;
   margin-top: 20px;
 }
-canvas {
+canvas{
   opacity: 0.8;
+
 }
 #addBtn {
   background-color: #75172f;
-  width: auto;
+  width: auto; 
 }
-#modalbtn {
+#modalbtn{
   text-align: center;
   margin-top: 5px;
   display: none;
 }
-
-#loginbtn:hover,
-.btn:hover {
+#loginbtn:hover, .btn:hover{
   background-color: #723b48;
 }
 #logo {
   height: auto;
   width: 100%;
   margin-top: 10%;
-  text-align: center;
+  text-align: center; 
 }
-#email,
-#password,
-#username,
-#pSignup,
-#eSignup {
+#email, #password, #username, #pSignup, #eSignup {
   border-bottom: 2px solid rgba(128, 128, 128, 0.651);
   padding-left: 5px;
   width: 100%;
 }
-#foodSearch {
+#foodSearch{
   border-bottom: 2px solid rgba(128, 128, 128, 0.651);
   padding-left: 5px;
   width: 50%;
   color: white;
 }
-#foodform {
+#foodform{
   text-align: center;
   padding: 20px;
 }
-::placeholder {
+::placeholder{
   color: white;
 }
 .modal-trigger {
   width: 150px;
   display: none;
   text-align: center;
-  margin: auto;
+  margin: auto; 
 }
 #logoLogin {
   height: 50%;
@@ -92,25 +84,20 @@ canvas {
   margin-right: auto;
   margin-bottom: 10px;
 }
-
-.modal {
-  background-color: #283a298c;
-  text-align: center;
+.modal{
+background-color: #283a298c;
+text-align: center;
+} 
+input{
+  color: white; 
 }
-input {
-  color: white;
-}
-
-h3,
-p,
-h5 {
+h3, p, h5{
   color: white;
   text-align: center;
   font-weight: bold;
   text-shadow: black 2px 2px;
 }
-h4,
-h6 {
+h4, h6{
   text-align: left;
   color: white;
   text-shadow: black 2px 2px;
