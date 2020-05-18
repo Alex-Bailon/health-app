@@ -27,7 +27,7 @@ Please see Home Body in action
 ![Homebody gif showing how it works](./public/assets/images/HomeBody.gif)
 
 ## Future Development
-Have customized access to nutritional information for various specific needs. ie: diabetes, allergies, eating habits (vegan, vegetarian, kosher, ovo-vegetarian,  etc.) and added nutrition facts. Also be able to give the user the ability to add friends to have friendly competitions.
+Have customized access to nutritional information for various specific needs. i.e.: diabetes, allergies, eating habits (vegan, vegetarian, kosher,  etc.) and added nutrition facts. Also be able to give the user the ability to add friends to have friendly competitions.
 
 ## Credits
 
